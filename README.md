@@ -1,5 +1,9 @@
 # Capacitor Sign in With Apple
 
+temporary fork of apple sign in which includes the sign in with web capbility.
+
+Fork only exists to publish the current master branch as npm package
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
