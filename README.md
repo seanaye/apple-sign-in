@@ -1,8 +1,38 @@
 # Capacitor Sign in With Apple
 
-temporary fork of apple sign in which includes the sign in with web capbility.
+# FORK INFORMATION
 
-Fork only exists to publish the current master branch as npm package
+This fork supports both capacitor ios sign in with apple and sign in with apple on web.
+
+### Installation
+
+`npm i @seanaye/apple-sign-in`
+or
+`yarn add @seanaye/apple-sign-in`
+
+### Example (works on web and ios)
+
+```ts
+//sign-in.ts
+
+import { Plugins } from "@capacitor/core";
+
+const webService = com.myapp.auth; // this must be the WEB service id from apple.
+// This is separate from your app service id. If you do not have this id you must create one and link it to your app in your apple developer account
+
+const { SignInWithApple } = Plugins;
+
+const opts = {
+  clientId: webService,
+  redirectURI: `${process.env.conf.appUrl}/login`, // the url that the web sign in is called from
+  scopes: "email name", // scopes you want to authorize
+  state: "", // im not entirely sure what this field does
+};
+
+async function signIn() {
+  const res = await SignInWithApple.authorize(opts);
+}
+```
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
